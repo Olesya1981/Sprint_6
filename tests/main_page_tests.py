@@ -4,13 +4,14 @@ from conftest import *
 import allure
 
 
-@allure.title('Проверяем соответствие ответов вопросам на главной странице')
+
 class TestMainPageQuestions:
 
     @pytest.mark.parametrize(
         'num',
         numbers
     )
+    @allure.title('Проверяем соответствие ответов вопросам на главной странице')
     def test_main_page_questions(self, driver, num):
         driver.get(Urls.main_page_url)
 

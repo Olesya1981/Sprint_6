@@ -19,3 +19,7 @@ class MainPage(BasePage):
     @allure.step("Нажимаем не кнопку ""Заказать")
     def click_order_button(self, locator):
         self.click_to_element(locator)
+
+    @allure.step('Нажимаем кнопку куки')
+    def click_cookie_button(self):
+        self.click_to_element_with_wait(MainPageLocators.COOKIE_BUTTON)

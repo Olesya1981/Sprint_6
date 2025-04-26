@@ -30,10 +30,18 @@ class OrderPage(BasePage):
         self.click_to_element(OrderPageLocators.YES_BUTTON)
 
     @allure.step('Получаем текст элемента')
-    def check_order(self, locator):
-        return self.get_text_from_element(locator)
+    def check_order(self):
+        return self.get_text_from_element(OrderPageLocators.ORDER_CONFIRMED)
 
     @allure.step('Нажимаем кнопку подтверждения заказа')
     def click_yes_button(self):
-        self.driver.find_element(*OrderPageLocators.YES_BUTTON).click()
+        self.driver.find_element(OrderPageLocators.YES_BUTTON).click()
+
+    @allure.step("Нажимаем кнопку куки")
+    def click_cookie_button(self):
+        self.click_to_element(OrderPageLocators.COOKIE_BUTTON).click()
+
+
+
+
 
